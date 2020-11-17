@@ -1,0 +1,35 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 text-left">
+            <p class="h5">Question {{index + 1}} of {{numQuestions}}</p>
+        </div>
+        <div class="col-sm-6 text-right">
+            <p class="h5">Time: {{ellapsedTime}} of {{duration}}</p>
+        </div>
+    </div> 
+    <div class="row">
+        <p class="h4 questions">Question: {{quiz.questions[index].name}}</p>
+    </div>
+    <div class="row">
+        <div class="row questions">
+            <div class="col-6 answer" *ngFor="let option of quiz.questions[index].options">
+                <div class="answer">
+                    <label class="font-weight-normal" [attr.for]="option.id">
+                        <input id="{{option.id}}" type="checkbox" [(ngModel)]="option.selected"
+                            (change)="onSelect(quiz.questions[index], option);" /> {{option.name}}
+                    </label>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="submit">
+                <button class="btn btn-success" (click)="nextQuestion()">Next</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

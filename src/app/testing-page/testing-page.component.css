@@ -1,0 +1,16 @@
+.container-fluid {
+    padding: 3%;
+}
+
+.questions {
+    padding-left: 5%;
+    padding-top: 2%;
+}
+
+.answer {
+    padding-left: 1%;
+}
+
+.submit {
+    padding-left: 2%;
+}
